@@ -1,0 +1,41 @@
+{
+  "schema": "prometheus_source_adapter_v1",
+  "policy_id": "xpolicy_lab",
+  "environment": {
+    "manager": "per_policy",
+    "python": "per_policy",
+    "root_spec_file": "pyproject.toml"
+  },
+  "dataset": {
+    "formats": [
+      "xpolicylab",
+      "hdf5",
+      "lerobot_v2_1",
+      "lerobot_v3"
+    ],
+    "required_modalities": [
+      "action"
+    ],
+    "optional_modalities": [
+      "state",
+      "rgb",
+      "language",
+      "tactile"
+    ],
+    "robot_schema_owner": "selected_policy_and_parent_workspace"
+  },
+  "capabilities": {
+    "resume": "per_policy",
+    "distributed": "per_policy",
+    "hardware_rollout_authorized": false
+  },
+  "stages": {
+    "doctor": true,
+    "prepare": "per_policy",
+    "train": "per_policy",
+    "resume": false,
+    "eval": "per_policy",
+    "export": false,
+    "serve": "per_policy"
+  }
+}
